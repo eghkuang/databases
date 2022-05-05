@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS `chat`;
+DROP DATABASE IF EXISTS chat;
 CREATE DATABASE chat;
 
 USE chat;
@@ -16,30 +16,34 @@ USE chat;
 --
 -- ---
 
-CREATE TABLE Messages (
+CREATE TABLE messages (
   id INTEGER(11) NOT NULL AUTO_INCREMENT,
-  text VARCHAR(1000) NOT NULL,
-  user_id INTEGER(11) NOT NULL,
+  username VARCHAR(25),
+  texxt VARCHAR(255),
+  roomname VARCHAR(25),
+  user_id INTEGER(11),
   PRIMARY KEY (id)
 );
+
 
 -- ---
 -- Table 'Users'
 --
 -- ---
 
-CREATE TABLE Users (
+CREATE TABLE users (
   id INTEGER(11) NOT NULL AUTO_INCREMENT,
   username VARCHAR(25) NOT NULL,
   roomname VARCHAR(25) NOT NULL,
   PRIMARY KEY (id)
 );
 
+
 -- ---
 -- Foreign Keys
 -- ---
 
-ALTER TABLE Messages ADD FOREIGN KEY (user_id) REFERENCES Users (id);
+-- ALTER TABLE Messages ADD FOREIGN KEY (user_id) REFERENCES Users (id);
 
 -- ---
 -- Table Properties
