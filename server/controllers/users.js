@@ -5,25 +5,18 @@ module.exports = {
 
     console.log('reqBody', req.body);
     models.users.getAll((err, data)=>{
-      console.log('data', data);
       if (err) {
-        console.log('ERROR:', err);
         res.send(err);
       } else {
-        res.send(JSON.stringify(data));
+        // res.send(JSON.stringify(data));
+        res.json(dat);
       }
     });
   }, // a function which handles a get request for all messages
 
 
   post: function (req, res) {
-    // let data = [];
-    // for (key in req.body) {
-    //   data.push(req.body[key]);
-    // }
-    // data = JSON.stringify(data);
-    // let msg = data.substring(1, data.length - 1);
-    models.users.create(req.body, (err, oldData)=>{
+    models.users.create(req.body.username, (err, oldData)=>{
       if (err) {
         res.sendStatus(404);
       } else {
@@ -32,3 +25,34 @@ module.exports = {
     });
   } // a function which handles posting a message to the database
 };
+
+/*----SOL---------
+
+var models = require('../models');
+
+module.exports = {
+
+  get: function (req, res) {
+    models.users.getAll(function(err, results) {
+      if (err) {
+        console.error('Unable to retrieve users from the database: ', err);
+        res.sendStatus(500);
+      } else {
+        res.json(results);
+      }
+    });
+  },
+  post: function (req, res) {
+    var params = [req.body.username];
+    models.users.create(params, function(err, results) {
+      if (err) {
+        console.error('Unable to post users to the database: ', err);
+        res.sendStatus(500);
+      } else {
+        res.sendStatus(201);
+      }
+    });
+  }
+  };
+
+-----------------*/

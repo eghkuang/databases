@@ -1,3 +1,28 @@
+// ORM method:
+
+// var Sequelize = require('Sequelize');
+// var orm = new Sequelize('chat', 'root', '');
+
+// var User = orm.define('User', {
+//   username: Sequelize.STRING
+// });
+
+// var Message = orm.define('Message', {
+//   text: Sequelize.STRING,
+//   roomname: Sequelize.STRING
+// });
+
+// User.hasMany(Message);
+// Message.belongTo(User);
+// //need to establish relationships from both sides
+
+// User.sync();
+// Message.sync();
+
+// exports.User = User;
+// exports.Message = Message;
+
+
 var mysql = require('mysql2');
 
 // Create a database connection and export it from this file.

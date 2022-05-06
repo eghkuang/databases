@@ -4,17 +4,8 @@ CREATE DATABASE chat;
 USE chat;
 
 
--- ---
--- Globals
--- ---
-
--- SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
--- SET FOREIGN_KEY_CHECKS=0;
-
--- ---
 -- Table 'Messages'
---
--- ---
+
 
 CREATE TABLE messages (
   id INTEGER(11) NOT NULL AUTO_INCREMENT,
@@ -26,10 +17,7 @@ CREATE TABLE messages (
 );
 
 
--- ---
 -- Table 'Users'
---
--- ---
 
 CREATE TABLE users (
   id INTEGER(11) NOT NULL AUTO_INCREMENT,
@@ -37,30 +25,6 @@ CREATE TABLE users (
   roomname VARCHAR(25) NOT NULL,
   PRIMARY KEY (id)
 );
-
-
--- ---
--- Foreign Keys
--- ---
-
--- ALTER TABLE Messages ADD FOREIGN KEY (user_id) REFERENCES Users (id);
-
--- ---
--- Table Properties
--- ---
-
--- ALTER TABLE Messages ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
--- ALTER TABLE Users ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- ---
--- Test Data
--- ---
-
--- INSERT INTO Messages (id,text,user_id) VALUES
--- ('','','');
--- INSERT INTO Users (id,username,roomname) VALUES
--- ('','','');
-
 
 
 /* Create other tables and define schemas for them here! */
@@ -72,3 +36,35 @@ CREATE TABLE users (
  *    mysql -u root < server/schema.sql
  *  to create the database and the tables.*/
 
+
+/*------SOL---------
+
+CREATE DATABASE chat;
+
+USE chat;
+
+CREATE TABLE messages (
+  /* Describe your table here.*/
+
+--   id int NOT NULL AUTO_INCREMENT,
+--   userid int NOT NULL,
+--   text varchar(200)  NOT NULL,
+--   roomname varchar(20),
+--   PRIMARY KEY (ID)
+-- );
+
+/* Create other tables and define schemas for them here! */
+
+
+-- CREATE TABLE users (
+--   id        int    NOT NULL AUTO_INCREMENT,
+--   username  varchar(40)   NOT NULL,
+--   PRIMARY KEY (ID)
+-- );
+
+
+/*  Execute this file from the command line by typing:
+ *    mysql -u root < server/schema.sql
+ *  to create the database and the tables.*/
+
+--------------------*/
